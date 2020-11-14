@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter,Route, Switch} from "react-router-dom";
-import MainPage from "./components/main_page"
+import ShoppingPage from "./components/main_page"
 
 ReactDOM.render(
     <BrowserRouter>
-        <Route path='/' component={MainPage}></Route>
+        <Route path='/' component={ShoppingPage}></Route>
     </BrowserRouter>,
 document.getElementById("root"))
