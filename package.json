@@ -1,0 +1,41 @@
+{
+  "name": "fashionsmart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack&&node backend/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fashion-Smart/FashonSmart.git"
+  },
+  "keywords": [
+    "FashionSmart"
+  ],
+  "author": "Violet Zhou, Rujing Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fashion-Smart/FashonSmart/issues"
+  },
+  "homepage": "https://github.com/Fashion-Smart/FashonSmart#readme",
+  "dependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "@tinymce/tinymce-react": "^3.6.0",
+    "babel-loader": "^8.1.0",
+    "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "express": "^4.17.1",
+    "jade": "^1.11.0",
+    "sequelize": "^6.3.5",
+    "tedious": "^9.2.1"
+  }
+}
