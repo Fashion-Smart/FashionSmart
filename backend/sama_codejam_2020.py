@@ -148,7 +148,7 @@ segmenter = Segmenter()
 # get image location from javascript code
 img_path = sys.argv[1]
 # print(img_path)
-# img_path = "./backend/images/male_fashion_street.jpg"
+# img_path = "./images/male_fashion_street.jpg"
 
 img = get_image_from_dir(img_path)
 segmap, id_to_class = segmenter.predict_on_image(img)

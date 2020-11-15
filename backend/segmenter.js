@@ -1,6 +1,7 @@
 const { spawn } = require('child_process');
 const { resolve } = require('path');
 
+
 function segmentImgKeywords(image_dir) {
     return new Promise((resolve, reject) => {
         let largeDataSet = [];
@@ -20,13 +21,4 @@ function segmentImgKeywords(image_dir) {
     })
 }
 
-segmentImgKeywords("./backend/images/male_fashion_street.jpg")
-    .then(data => {
-        const strProcessed = data.replace(/'/g, '"');
-        console.log(strProcessed);
-        keyword_list = JSON.parse(strProcessed);
-        console.log(keyword_list);
-    })
-    .catch(err => {
-        console.log(err);
-    })
+module.exports.segmentImgKeywords = segmentImgKeywords;
