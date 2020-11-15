@@ -1,6 +1,5 @@
 import React from "react"
-import FilePicker from "./file_picker"
-import { generateBase64FromImage } from '../utils/image_parser';
+import ImageUploader from 'react-images-upload';
 
 class ShopperPage extends React.Component{
     constructor(props){
@@ -28,8 +27,13 @@ class ShopperPage extends React.Component{
     render(){
         return (
         <>
-            <p>Shopper Page</p>
-            <FilePicker onChange={this.ImageChangeHandler.bind(this)}></FilePicker>
+            <ImageUploader
+                withIcon={true}
+                buttonText='Choose images'
+                onChange={this.ImageChangeHandler.bind(this)}
+                imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                maxFileSize={5242880}
+            />
         </>
         );
     }

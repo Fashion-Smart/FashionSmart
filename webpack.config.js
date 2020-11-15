@@ -22,10 +22,17 @@ module.exports = {
                   ["@babel/plugin-proposal-class-properties", { "loose": true }]
                 ],
                 presets: ["@babel/preset-react", "@babel/preset-env",]
-            },
+            }
           }
-        }
-      ]
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
+        },
+        {
+          test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+          loader: ['url-loader?limit=100000']
+      }]
     },
 
     mode: 'development'
