@@ -50,7 +50,7 @@ class ShopperPage extends React.Component{
                 withIcon={true}
                 buttonText='Choose images'
                 onChange={this.ImageChangeHandler.bind(this)}
-                imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                imgExtension={['.jpg', '.gif', '.png']}
                 maxFileSize={5242880}
                 singleImage={true}
             />
