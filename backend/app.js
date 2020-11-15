@@ -22,6 +22,11 @@ app.use((req, res, next) => {
     next();
   });
 
+app.post('/search', (req, res)=>{
+    res.status(200).send("request received");
+  }
+)
+
 app.use('*/', (req, res) => {
   res.status(200).sendFile(path.join(__dirname, '../frontend/static/index.html'));
 });
