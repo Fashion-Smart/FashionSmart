@@ -2,7 +2,6 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const path = require('path');
 const multer = require('multer');
-const { Sequelize } = require('sequelize');
 const errorHandler = require('./middleware/error_handler');
 
 const {searchController} = require('./controllers/controller');
