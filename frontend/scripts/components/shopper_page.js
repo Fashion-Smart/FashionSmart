@@ -12,7 +12,6 @@ class ShopperPage extends React.Component{
     }
 
     fetchData = (formData) =>{
-        formData = "dummy data";
         fetch("/search", {
             method: "POST",
             body: formData
@@ -24,15 +23,18 @@ class ShopperPage extends React.Component{
 
     ImageChangeHandler = (files) => {
         if (files.length>0) {
-            generateBase64FromImage(files[0])
-            .then(b64 => {
-              this.setState({ image: b64 });
-              
-              const formData = new FormData();
-              formData.append("image", this.state.image);
+            this.setState({ image: files[0] });
+            
+            const formData = new FormData();
+            formData.append("image", files[0]);
 
-              this.fetchData(formData);
+            fetch("/search", {
+                method: "POST",
+                body: formData
             })
+            .then(resData=>{
+              console.log(resData);
+              })
             .catch(e => {
               console.log(e.message);
               this.setState({ image: null });

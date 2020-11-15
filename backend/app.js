@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, "../frontend")));
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, './images');
+    cb(null, './backend/images');
   },
   filename: (req, file, cb) => {
     cb(null, new Date().toISOString() + '-' + file.originalname);
@@ -28,13 +28,12 @@ const fileFilter = (req, file, cb) => {
     ) {
       cb(null, true);
     } else {
-      cb(null, false);
+      cb(new Error("file type is not correct"), false);
     }
 };
 
 //allow cross domain access
 app.use((req, res, next) => {
-   
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
       'Access-Control-Allow-Methods',
@@ -44,9 +43,10 @@ app.use((req, res, next) => {
     next();
   });
 
-app.use(multer({dest: './images', fileFilter: fileFilter}).single('image'));
+app.use(multer({storage: fileStorage, fileFilter: fileFilter}).single('image'));
 
 app.post('/search', (req, res)=>{
+    console.log(req.file);
     res.status(200).send("request received");
   }
 )
@@ -57,4 +57,4 @@ app.use('*/', (req, res) => {
 
 app.use(errorHandler);
 
-app.listen(8080, '127.0.0.1');
+app.listen(3000, '127.0.0.1');
