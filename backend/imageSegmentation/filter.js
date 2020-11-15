@@ -1,4 +1,4 @@
-const { segmentImgKeywords } = require('./segmenter.js');
+const { segmentImgKeywords } = require('./segmenter.js.js');
 
 segmentImgKeywords("./images/male_fashion_street.jpg")
     .then(data => {

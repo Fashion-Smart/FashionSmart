@@ -45,7 +45,7 @@ app.use((req, res, next) => {
     next();
   });
 
-app.use(multer({storage: fileStorage, fileFilter: fileFilter}).single('image'));
+//app.use(multer({storage: fileStorage, fileFilter: fileFilter}).single('image'));
 
 //shoppers
 app.post('/search', searchController);
