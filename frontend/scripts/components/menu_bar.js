@@ -22,13 +22,10 @@ export const MenuBar = (props)=>{
 
     return (
         <div className="menubar-background">
-            <nav className="navbar navbar-expand-lg navbar-dark main-container menubar-background">
+            <nav className="navbar navbar-dark bg-dark">
                 <a className="navbar-brand" href="javascript:;">Fashion Smart</a>
-                <form className="form-inline my-2 my-lg-0 float-right">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-                    <i className="fas fa-user-circle fa-2x mr-2"></i>
-                    <button className="btn btn-primary my-2 my-sm-0" type="submit" onClick={switchPage}>I am a {pageName=="/retailer"? "shopper":"retailer"}</button>
-                </form>
+                <div className="navbar-brand" style={{fontSize:"16px"}}>Smart Fashion Finder Made for You!</div>
+                <button className="btn btn-outline-primary my-2 my-sm-0 float-right" type="submit" onClick={switchPage}>I am a {pageName=="/retailer"? "shopper":"retailer"}</button>
             </nav>
         </div>
     )
