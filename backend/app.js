@@ -5,6 +5,9 @@ const multer = require('multer');
 const { Sequelize } = require('sequelize');
 const errorHandler = require('./middleware/error_handler');
 
+const {searchController} = require('./controllers/controller');
+const {keywordController} = require('./controllers/controller');
+
 app = express();
 
 app.use(bodyparser.json());
@@ -45,11 +48,11 @@ app.use((req, res, next) => {
 
 app.use(multer({storage: fileStorage, fileFilter: fileFilter}).single('image'));
 
-app.post('/search', (req, res)=>{
-    console.log(req.file);
-    res.status(200).send("request received");
-  }
-)
+//shoppers
+app.post('/search', searchController);
+
+//retailers
+app.post('/keywords', keywordController);
 
 app.use('*/', (req, res) => {
   res.status(200).sendFile(path.join(__dirname, '../frontend/static/index.html'));
